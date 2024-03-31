@@ -59,12 +59,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Genero" class="control-label"></label>
-                <input asp-for="Genero" class="form-control" />
+                <select asp-for="Genero" class="form-control" asp-items="ViewBag.Generos">
+                    <option value="">Seleccionar género</option>
+                </select>
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <select asp-for="Estado" class="form-control" asp-items="ViewBag.Estados">
+                    <option value="">Seleccionar estado</option>
+                </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -73,26 +77,30 @@
             </div>
             <div class="btn_crear">
                 <input type="submit" value="Crear" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+           </div>
+      </form>
 </div>
+</div>
+ 
+
+ 
+
 <br>
 <div>
     <a asp-action="Index" class="btn_volver">volver</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+@section Scripts {}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
 <style>
 
-    .btn_crear {
-        cursor: pointer;
-        top: 450px;
-        position: absolute;
-    }
+        .btn_crear {
+            cursor: pointer;
+            top: 813px;
+            position: absolute;
+        }
 
     .btn_volver {
         display: flex;
@@ -109,4 +117,4 @@
         position: absolute;
         right: 69%;
     }
-</style>
+  </style>

@@ -51,6 +51,8 @@ namespace ProyectoSenaLmour.Controllers
         {
             ViewData["IdRol"] = new SelectList(_context.Roles, "IdRol", "IdRol");
             ViewData["IdTipoDocumento"] = new SelectList(_context.TipoDocumentos, "IdTipoDocumento", "IdTipoDocumento");
+            ViewData["Estados"] = new SelectList(new[] { "Activo", "Inactivo" });
+            ViewData["Generos"] = new SelectList(new[] { "Masculino", "Femenino", "prefiero no decirlo" });
             return View();
         }
 
@@ -72,7 +74,6 @@ namespace ProyectoSenaLmour.Controllers
                 return RedirectToAction(nameof(Index));
             ViewData["IdRol"] = new SelectList(_context.Roles, "IdRol", "IdRol", cliente.IdRol);
             ViewData["IdTipoDocumento"] = new SelectList(_context.TipoDocumentos, "IdTipoDocumento", "IdTipoDocumento", cliente.IdTipoDocumento);
-            return View(cliente);
             //return RedirectToAction(nameof(Index));
 
         }

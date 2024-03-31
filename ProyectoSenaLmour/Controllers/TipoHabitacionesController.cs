@@ -47,6 +47,7 @@ namespace ProyectoSenaLmour.Controllers
         // GET: TipoHabitaciones/Create
         public IActionResult Create()
         {
+            ViewData["Estados"] = new SelectList(new[] { "Activo", "Inactivo" });
             return View();
         }
 

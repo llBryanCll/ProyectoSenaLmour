@@ -30,20 +30,49 @@
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <select asp-for="Estado" class="form-control" asp-items="ViewBag.Estados">
+                    <option value="">Seleccionar estado</option>
+                </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="btn_crear">
+                <input type="submit" value="Crear Tipo Habitacion" class="btn btn-primary" />
+            </div>
+            <div class="btn_volver">
+                <a asp-action="Index">Volver</a>
             </div>
         </form>
-    </div>
-</div>
-<br>
-<div>
-    <a asp-action="Index" class="btn btn-secondary">volver</a>
-</div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+
+
+
+        @section Scripts {
+        }
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+
+        <style>
+
+            .btn_crear {
+                cursor: pointer;
+                top: 252px;
+                position: absolute;
+            }
+
+            .btn_volver {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid #000;
+                border-radius: 10px;
+                padding: 5px 5px;
+                width: 80px;
+                background-color: #393d3f;
+                color: white;
+                cursor: pointer;
+                top: 252px;
+                position: absolute;
+                right: 72%;
+            }
+        </style>

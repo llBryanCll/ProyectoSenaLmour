@@ -48,6 +48,7 @@ namespace ProyectoSenaLmour.Controllers
         public IActionResult Create()
         {
             ViewData["IdHabitacion"] = new SelectList(_context.Habitaciones, "IdHabitacion", "IdHabitacion");
+            ViewData["Estados"] = new SelectList(new[] { "Activo", "Inactivo" });
             return View();
         }
 
